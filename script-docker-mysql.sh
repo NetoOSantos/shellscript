@@ -22,10 +22,12 @@ read -p "Press Enter to continue ..."
 # TROCA A PORTA PRA NÃO FICAR IGUAL A PADRÃO DO MYSQL... PODE COLOCAR QUALQUER COISA.. TEM QUE SER 4 DIGITOS.
 # Obs: a alterações das variaveis exige manter essas aspas duplas, modifique somente o que está dentro das "aqui".
 
-portaBanco="3306"
-nomeContainer="KeepSwimmingKS"
-nomeBanco="KeepSwimming"
-senhaRootBanco="urubu100"
+portaBanco="3333"
+nomeContainer="contkeep"
+
+nomeBanco="keep"
+senhaRootBanco="root"
+
 userBanco="urubu100"
 senhaUserBanco="urubu100"
 
@@ -41,10 +43,10 @@ read -p "Press Enter to continue ..."
 # ARQUIVO SQL / ABAIXO SÓ COLOCAR O NOME DO ARQUIVO
 # OBS: O ARQUIVO DEVERÁ ESTAR NA MESMA PASTA QUE O script-docker-mysql.sh OU SEJA, MESMA PASTA QUE ESTÁ ESSE SCRIPT.
 
-file_sql="keepSwimmingMYSQL.sql"
+file_sql="sqlScript.sql"
 
 # COMANDO DOCKER PARA INSERIR
-docker exec -i $nomeContainer sh -c 'exec mysql -uroot -purubu100 '$nomeBanco'' <"$file_sql"
+docker exec -i $nomeContainer sh -c 'exec mysql -uroot -proot '$nomeBanco'' <"$file_sql"
 
 #
 # "===  FIM DO SCRIPT 'script-docker-mysql.sh', OBRIGADO. ==="
