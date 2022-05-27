@@ -1,5 +1,5 @@
 # //-----------------------------------------------------------//
-#             INSTALLER | Autor: WALDERLEY NETO                
+# =             INSTALLER | Autor: WALDERLEY NETO              = 
 # //-----------------------------------------------------------//
 
 # 1 - comando para instalar .zip, java, docker e imagem MySQL (Apenas copiar e colar no terminal)
