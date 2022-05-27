@@ -1,5 +1,5 @@
 # # "------------------------------------------------------------"
-# "===      SCRIPT INSTALLER Keep Swimming |  Autor: WALDERLEY NETO        ==="
+# "=== SCRIPT INSTALLER Keep Swimming | Autor: WALDERLEY NETO ==="
 # "===            walderley.neto@bandtec.com.br               ==="
 # # "------------------------------------------------------------"
 
