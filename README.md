@@ -1,6 +1,5 @@
 # # "------------------------------------------------------------"
 # "===    INSTALLER Keep Swimming | Autor: WALDERLEY NETO     ==="
-# "===            walderley.neto@bandtec.com.br               ==="
 # # "------------------------------------------------------------"
 
 # 1 - comando para instalar .zip, java, docker e imagem MySQL (Apenas copiar e colar no terminal)
@@ -20,5 +19,12 @@ cd / && git clone https://github.com/NetoOSantos/shellscript.git && cd /./shells
 
 # 4 - Comando para excluir contener contkeep e excluir diretorio shellscript (Apenas copiar e colar no terminal)
 sudo docker stop contkeep && sudo docker rm contkeep && cd .. && sudo rm -r /shellscript
+
+#
+# "===  FIM DO SCRIPT 'script-docker-mysql.sh', OBRIGADO. ==="
+# "----------------------------------------------------------"
+# "===                    CRÉDITOS                        ==="
+# "===                 WALDERLEY NETO                     ==="
+# "----------------------------------------------------------"
 
 
