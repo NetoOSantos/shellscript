@@ -9,13 +9,13 @@ Sudo apt update && sudo apt upgrade -y && Sudo apt-get install xrdp lxde-core lx
 cd / && git clone https://github.com/NetoOSantos/shellscript.git && cd /./shellscript/ && chmod +x script-docker-mysql.sh && chmod +x sqlScript.sql && chmod 777 keep.jar && ./script-docker-mysql.sh && sudo docker start contkeep && java -jar keep.jar
 
 # 3 - Passo a passo para abrir o MySQL no Docker. ps: o comando acima deve ter sido executado, para que esse funcione
-1 - sudo docker exec -it contkeep bash
-2 - mysql -u root -p
-3 - insira a senha do banco
-4 - Show databases;
-5 - use keep;
-6 - show tables;
-7 - faça os selects que desejar!
+1. sudo docker exec -it contkeep bash<br/>
+2 - mysql -u root -p<br/>
+3 - insira a senha do banco<br/>
+4 - Show databases;<br/>
+5 - use keep;<br/>
+6 - show tables;<br/>
+7 - faça os selects que desejar!<br/>
 
 # 4 - Comando para excluir contener contkeep e excluir diretorio shellscript (Apenas copiar e colar no terminal)
 sudo docker stop contkeep && sudo docker rm contkeep && cd .. && sudo rm -r /shellscript
