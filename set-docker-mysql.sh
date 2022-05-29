@@ -35,7 +35,7 @@ then
         echo "digite o nome do seu container"
         read nome
 
-        echo "ao entrar de o comando mysql -u root -p e coloquei a senha do seu usuario para entrar no banco de dados"
+        echo "ao entrar de o comando mysql -u root -p e coloque a senha do seu usuario para entrar no banco de dados"
         file_sql="sqlScript.sql"
         sudo docker exec -it $nome sh -c 'exec mysql -uroot -proot '$banco'' <"$file_sql"
 echo "$id"
@@ -46,5 +46,6 @@ read resposta3
 if ["$resposta3" == "s"]
 then
         echo "executando jar..."
+        cd shellscript/
         java -jar keep.jar
 fi
