@@ -14,9 +14,9 @@ CREATE TABLE FUNCIONARIO (
     Nome varchar(50),
     EMAIL VARCHAR(50),
     SENHA VARCHAR(50),
-    Cargo VARCHAR(50)
-    -- foreign key (fkGestor) references FUNCIONARIO(idFuncionario),
-    -- foreign key (fkEmpresa) references empresa(idEmpresa)
+    Cargo VARCHAR(50),
+    foreign key (fkGestor) references FUNCIONARIO(idFuncionario),
+    foreign key (fkEmpresa) references empresa(idEmpresa)
 );
 
 CREATE TABLE Maquina (
@@ -25,8 +25,9 @@ CREATE TABLE Maquina (
     sistemaOperacional varchar(50),
     fabricante varchar(50),
     arquitetura int,
-    permissoes varchar(50)
-    -- foreign key (fkUsuario) references FUNCIONARIO(idFuncionario)
+    hostName varchar(50),    
+    permissoes varchar(50),
+    foreign key (fkUsuario) references FUNCIONARIO(idFuncionario)
 );
 
 CREATE TABLE Processos (
@@ -34,22 +35,26 @@ CREATE TABLE Processos (
     fkMaquina INT,
     PID INT,
     Nome varchar(45),
-    usoCPU DOUBLE,
-    usoMemoria DOUBLE,
+    usoCPU FLOAT,
+    usoMemoria FLOAT,
     bytesUtilizados INT,
-    memVirtualUtilizada DOUBLE,
+    memVirtualUtilizada FLOAT,
     totalProcessos int,
-    threads int
-    -- foreign key (fkMaquina) references Maquina(idMaquina)
+    threads int,
+    dataHoraProcesso datetime,
+    foreign key (fkMaquina) references Maquina(idMaquina)
 );
 
 CREATE TABLE ComponentesHardware (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     fkMaquina INT,
+    nomeDisco varchar(45),
+    tamanhoDisco FLOAT,
+    modeloDisco varchar(100),
     qtdDiscos int,
-    memoriaTotal Double,
-    processadorNome varchar(50)
-    -- foreign key (fkMaquina) references Maquina(idMaquina)
+    memoriaTotal FLOAT,
+    processadorNome varchar(50),
+    foreign key (fkMaquina) references Maquina(idMaquina)
 );
 
 CREATE TABLE Historico (
@@ -59,10 +64,10 @@ CREATE TABLE Historico (
     tempoInicializado varchar(45),
     tempoDeAtividade varchar(45),
     temperaturaAtual varchar(45),
-    memoriaEmUso Double,
-    memoriaDisponivel Double,
-    processadorUso Double
-    -- foreign key (fkMaquina) references Maquina(idMaquina)
+    memoriaEmUso FLOAT,
+    memoriaDisponivel FLOAT,
+    processadorUso FLOAT,
+    foreign key (fkMaquina) references Maquina(idMaquina)
 );
 
 INSERT INTO
@@ -77,3 +82,8 @@ VALUES
         '123',
         'Desenvolvedor'
     );
+    
+INSERT INTO FUNCIONARIO VALUES (null, 100, 'Gerson', 'Gerson@hotmail.com', '123', 'Gestor');    
+
+INSERT INTO Maquina values(1,2,'Linux','GNU',64,'spNote','false');
+    
