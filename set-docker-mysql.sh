@@ -39,13 +39,5 @@ then
         file_sql="sqlScript.sql"
         sudo docker exec -it $nome sh -c 'exec mysql -uroot -proot '$banco'' <"$file_sql"
 echo "$id"
-fi
 
-echo "Deseja executar o Jar?\n s|n"
-read resposta3
-if ["$resposta3" == "s"]
-then
-        echo "executando jar..."
-        cd shellscript/
-        java -jar keep.jar
 fi
