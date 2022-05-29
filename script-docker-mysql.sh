@@ -4,33 +4,38 @@
 # "------------------------------------------------------------------------"
 
 clear
-echo "deseja criar o seu banco dentro do docker?\n
-s|n"
-read resposta
-if [ "$resposta" == "s" ]
-then
-        echo "Qual a porta do Banco?"
-        read portaBanco
-        echo "criando o MySql, qual o nome do seu container?"
-        read nomeContainer
-        echo " qual o nome do seu banco de dados?"
-        read nomeBanco
-        echo "qual a senha do seu banco de dados?"
-        read senhaRootBanco
-        echo "Qual o user do Banco?"
-        read userBanco
-        echo "Qual a senha do user do banco"
-        read senhaUserBanco
+echo "Criando Container Docker MySQL"
+read -p "Press Enter to continue ..."
 
-        # COMANDO DOCKER PARA CRIAR CONTAINER.
-        docker run -d -p $portaBanco:3306 --name $nomeContainer -e "MYSQL_DATABASE=$nomeBanco" -e "MYSQL_ROOT_PASSWORD=$senhaRootBanco" -e "MYSQL_USER=$userBanco" -e "MYSQL_PASSWORD=$senhaUserBanco" mysql
+portaBanco="3306"
+nomeContainer="contkeep"
 
-        echo "Aguarde 20 Segundos (Inicializando Container...)"
-        sleep 20
-        read -p "Press Enter to continue ..."
+nomeBanco="keep"
+senhaRootBanco="root"
 
-        file_sql="sqlScript.sql"
+userBanco="urubu100"
+senhaUserBanco="urubu100"
 
-        # COMANDO DOCKER PARA INSERIR
-        docker exec -i $nomeContainer sh -c 'exec mysql -uroot -proot '$nomeBanco'' <"$file_sql"
-fi
+# COMANDO DOCKER PARA CRIAR CONTAINER.
+
+docker run -d -p $portaBanco:3306 --name $nomeContainer -e "MYSQL_DATABASE=$nomeBanco" -e "MYSQL_ROOT_PASSWORD=$senhaRootBanco" -e "MYSQL_USER=$userBanco" -e "MYSQL_PASSWORD=$senhaUserBanco" mysql
+
+echo "Aguarde 20 Segundos (Inicializando Container...)"
+sleep 20
+read -p "Press Enter to continue ..."
+
+# INSERINDO DADOS NO MYSQL DO CONTAINER
+# ARQUIVO SQL / ABAIXO SÓ COLOCAR O NOME DO ARQUIVO
+# OBS: O ARQUIVO DEVERÁ ESTAR NA MESMA PASTA QUE O script-docker-mysql.sh OU SEJA, MESMA PASTA QUE ESTÁ ESSE SCRIPT.
+
+file_sql="sqlScript.sql"
+
+# COMANDO DOCKER PARA INSERIR
+docker exec -i $nomeContainer sh -c 'exec mysql -uroot -proot '$nomeBanco'' <"$file_sql"
+
+#
+# "===  FIM DO SCRIPT 'script-docker-mysql.sh', OBRIGADO. ==="
+# "----------------------------------------------------------"
+# "===                    CRÉDITOS                        ==="
+# "===                 Alexandre Gavazzi                  ==="
+# "----------------------------------------------------------"
