@@ -8,7 +8,7 @@
 3. sudo apt install openjdk-11-jre-headless && Sudo apt install Docker.io && Sudo systemctl start Docker && Sudo Docker pull mysql:5.7
 
 # 2 - Comando para clonar repositorio, dar permissões a arquivos do repositorio, executar container e executar .jar (Apenas copiar e colar no terminal)
-cd / && git clone https://github.com/NetoOSantos/shellscript.git && cd /./shellscript/ && chmod +x set-docker-mysql.sh && chmod +x sqlScript.sql && chmod 777 keep.jar && ./set-docker-mysql.sh && sudo docker start contkeep && java -jar keep.jar
+cd / && git clone https://github.com/NetoOSantos/shellscript.git && cd /./shellscript/ && chmod +x script-docker-mysql.sh && chmod +x sqlScript.sql && chmod 777 keep.jar && ./script-docker-mysql.sh && sudo docker start contkeep && java -jar keep.jar
 
 # 3 - Passo a passo para abrir o MySQL no Docker. ps: o comando acima deve ter sido executado, para que esse funcione
 1. sudo docker exec -it contkeep bash<br/>
