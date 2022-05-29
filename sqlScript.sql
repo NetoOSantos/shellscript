@@ -25,7 +25,7 @@ CREATE TABLE Maquina (
     sistemaOperacional varchar(50),
     fabricante varchar(50),
     arquitetura int,
-    hostName varchar(50),    
+    hostName varchar(50),
     permissoes varchar(50),
     foreign key (fkUsuario) references FUNCIONARIO(idFuncionario)
 );
@@ -82,8 +82,20 @@ VALUES
         '123',
         'Desenvolvedor'
     );
-    
-INSERT INTO FUNCIONARIO VALUES (null, 100, 'Gerson', 'Gerson@hotmail.com', '123', 'Gestor');    
 
-INSERT INTO Maquina values(1,2,'Linux','GNU',64,'spNote','false');
-    
+INSERT INTO
+    FUNCIONARIO
+VALUES
+    (
+        null,
+        100,
+        'Gerson',
+        'Gerson@hotmail.com',
+        '123',
+        'Gestor'
+    );
+
+INSERT INTO
+    Maquina
+values
+    (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');

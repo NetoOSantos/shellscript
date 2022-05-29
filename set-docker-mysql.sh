@@ -23,7 +23,7 @@ then
         echo "qual a senha do seu banco de dados?"
         read senha
 
-        sudo docker run -d -p 3306:3306 --name $nome -e "MYSQL_DATABASE=$banco" -e "MYSQL_ROOT_PASSWORD=$senha" mysql
+        sudo docker run -d -p 3306:3306 --name $nome -e "MYSQL_DATABASE=$banco" -e "MYSQL_ROOT_PASSWORD=$senha" mysql:5.7
         
 fi
 
@@ -36,6 +36,15 @@ then
         read nome
 
         echo "ao entrar de o comando mysql -u root -p e coloquei a senha do seu usuario para entrar no banco de dados"
-sudo docker exec -it $nome bash
+        file_sql="sqlScript.sql"
+        sudo docker exec -it $nome sh -c 'exec mysql -uroot -proot '$banco'' <"$file_sql"
 echo "$id"
+fi
+
+echo "Deseja executar o Jar?\n s|n"
+read resposta3
+if ["$resposta3" == "s"]
+then
+        echo "executando jar..."
+        java -jar keep.jar
 fi
