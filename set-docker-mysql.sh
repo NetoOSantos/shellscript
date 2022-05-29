@@ -23,7 +23,7 @@ then
         echo "qual a senha do seu banco de dados?"
         read senha
 
-        sudo docker run -d -p 3306:3306 --name $nome -e "MYSQL_DATABASE=$banco" -e "MYSQL_ROOT_PASSWORD=$senha" mysql:5.7
+        sudo docker run -d -p 3306:3306 --name $nome -e "MYSQL_DATABASE=$banco" -e "MYSQL_ROOT_PASSWORD=$senha" mysql
         
 fi
 
