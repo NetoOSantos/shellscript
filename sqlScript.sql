@@ -100,5 +100,3 @@ CREATE TABLE Historico (
     processadorUso FLOAT,
     foreign key (fkMaquina) references Maquina(idMaquina)
 );
-
-INSERT INTO Maquina values (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');
