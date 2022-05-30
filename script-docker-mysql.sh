@@ -13,8 +13,8 @@ nomeContainer="contkeep"
 nomeBanco="keep"
 senhaRootBanco="root"
 
-userBanco="root"
-senhaUserBanco="root"
+userBanco="urubu100"
+senhaUserBanco="urubu100"
 
 # COMANDO DOCKER PARA CRIAR CONTAINER.
 
