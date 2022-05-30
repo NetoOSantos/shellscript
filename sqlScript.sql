@@ -7,6 +7,9 @@ create table empresa(
     senha varchar(100)
 ) auto_increment 100;
 
+INSERT INTO empresa VALUES 
+(null,"03.778.130/0001-48", "Keep Swimming", 'Keep@hotmail.com', 06126020,'123');
+
 CREATE TABLE FUNCIONARIO (
     idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
     fkGestor Int,
@@ -19,6 +22,32 @@ CREATE TABLE FUNCIONARIO (
     foreign key (fkEmpresa) references empresa(idEmpresa)
 );
 
+INSERT INTO
+    FUNCIONARIO
+VALUES
+    (
+		null,
+        null,
+        100,
+        'Gerson',
+        'Gerson@hotmail.com',
+        '123',
+        'Gestor'
+    );
+
+INSERT INTO
+    FUNCIONARIO
+VALUES
+    (
+        null,
+        1,
+        100,
+        "Bruno",
+        "bruno@hotmail.com",
+        '123',
+        'Desenvolvedor'
+    );
+
 CREATE TABLE Maquina (
     idMaquina INT PRIMARY KEY AUTO_INCREMENT,
     fkUsuario INT,
@@ -29,6 +58,8 @@ CREATE TABLE Maquina (
     permissoes varchar(50),
     foreign key (fkUsuario) references FUNCIONARIO(idFuncionario)
 );
+
+INSERT INTO Maquina values (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');
 
 CREATE TABLE Processos (
     idProcesso INT PRIMARY KEY AUTO_INCREMENT,
@@ -69,30 +100,5 @@ CREATE TABLE Historico (
     processadorUso FLOAT,
     foreign key (fkMaquina) references Maquina(idMaquina)
 );
-
-INSERT INTO
-    FUNCIONARIO
-VALUES
-    (
-        null,
-        100,
-        'Gerson',
-        'Gerson@hotmail.com',
-        '123',
-        'Gestor'
-    );
-
-INSERT INTO
-    FUNCIONARIO
-VALUES
-    (
-        null,
-        NULL,
-        NULL,
-        "Bruno",
-        "bruno@hotmail.com",
-        '123',
-        'Desenvolvedor'
-    );
 
 INSERT INTO Maquina values (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');
