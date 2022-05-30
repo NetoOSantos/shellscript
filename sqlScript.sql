@@ -75,19 +75,6 @@ INSERT INTO
 VALUES
     (
         null,
-        NULL,
-        NULL,
-        "Bruno",
-        "bruno@hotmail.com",
-        '123',
-        'Desenvolvedor'
-    );
-
-INSERT INTO
-    FUNCIONARIO
-VALUES
-    (
-        null,
         100,
         'Gerson',
         'Gerson@hotmail.com',
@@ -96,6 +83,16 @@ VALUES
     );
 
 INSERT INTO
-    Maquina
-values
-    (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');
+    FUNCIONARIO
+VALUES
+    (
+        null,
+        NULL,
+        NULL,
+        "Bruno",
+        "bruno@hotmail.com",
+        '123',
+        'Desenvolvedor'
+    );
+
+INSERT INTO Maquina values (1, 2, 'Linux', 'GNU', 64, 'spNote', 'false');
